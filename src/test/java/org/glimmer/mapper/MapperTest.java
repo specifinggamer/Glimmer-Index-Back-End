@@ -11,10 +11,15 @@ import java.util.List;
 public class MapperTest {
     @Autowired
     UserMapper userMapper;
-
+    @Autowired
+    private MenuMapper menuMapper;
     @Test
     void SelectTest(){
-        List<User> users = userMapper.selectList(null);
+        List<User>users = userMapper.selectList(null);
         System.out.println(users);
+    }
+    @Test
+    public void testselectPermsByUserId(){
+        System.out.println(menuMapper.selectPermsByUserId(2L));
     }
 }
